@@ -37,3 +37,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Oh! the sad state of compilers on OSX...
+# http://stackoverflow.com/questions/8032824/cant-install-ruby-under-lion-with-rvm-gcc-issues
+CC=/usr/bin/gcc-4.2
