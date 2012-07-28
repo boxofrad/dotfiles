@@ -1,2 +1,5 @@
 " Colour Scheme
 colorscheme ir_black
+
+" Font
+set guifont=Menlo:h16
