@@ -1,3 +1,13 @@
 " 11 Inch MacBook Air (lovely but has a tiny escape key)
 map § <Esc>
 imap § <Esc>
+
+" Quickly resize split
+map <Leader>[ 10<C-w>+
+map <Leader>] 10<C-w>-
+
+map <Leader>- 10<C-w><
+map <Leader>= 10<C-w>>
+
+" Double tab leader to even out the splits
+map <Leader><Leader> <C-w>=
