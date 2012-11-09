@@ -5,6 +5,6 @@ colorscheme ir_black
 set guifont=Menlo:h16
 
 " Hide GUI Toolbar
- if has("gui_running")
-   set guioptions-=T
- endif
+if has("gui_running")
+ set guioptions-=T
+endif
