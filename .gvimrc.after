@@ -1,5 +1,5 @@
 " Colour Scheme
-colorscheme ir_black
+colorscheme Tomorrow-Night
 
 " Font
 set guifont=Menlo:h16
