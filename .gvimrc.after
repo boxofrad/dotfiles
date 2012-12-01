@@ -1,8 +1,15 @@
+" Which OS are we on?
+let os = substitute(system('uname'), "\n", "", "")
+
 " Colour Scheme
 colorscheme Tomorrow-Night
 
 " Font
-set guifont=Menlo:h16
+if os == "Linux"
+  set guifont=Ubuntu\ Mono\ 14
+else
+  set guifont=Menlo:h16
+endif
 
 " Hide GUI Toolbar
 if has("gui_running")
