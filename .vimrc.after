@@ -11,3 +11,16 @@ map <Leader>= 10<C-w>>
 
 " Double tab leader to even out the splits
 map <Leader><Leader> <C-w>=
+
+" I hate the way vim yanks when I paste over something. BE MAD.
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+
+vnoremap <silent> <expr> p <sid>Repl()
