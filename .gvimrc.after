@@ -8,7 +8,7 @@ colorscheme Tomorrow-Night
 if os == "Linux"
   set guifont=Ubuntu\ Mono\ 14
 else
-  set guifont=Menlo:h16
+  set guifont=Monaco:h15
 endif
 
 " Hide GUI Toolbar
