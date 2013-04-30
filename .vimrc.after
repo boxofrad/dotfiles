@@ -16,6 +16,9 @@ map <Leader><Leader> <C-w>=
 map <Leader>y <C-Y>,
 imap <Leader>y <C-Y>,
 
+" Leader-S to search
+map <Leader>s :Ag ''<Left>
+
 " I hate the way vim yanks when I paste over something. BE MAD.
 function! RestoreRegister()
   let @" = s:restore_reg
