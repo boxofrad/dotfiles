@@ -37,3 +37,9 @@ map <Leader>n :split ~/Dropbox/notes.txt<CR>
 
 " SRSLY, who actually uses Ex mode?
 map Q <Nop>
+
+" Open git status and go to first modified file
+map <Leader>g :Gstatus<CR>/modified<CR>:noh<CR>
+
+" Stage a hunk
+map <Leader>p :diffput<CR>
