@@ -1,0 +1,14 @@
+[user]
+	email = daniel@floppy.co
+	name = Daniel Upton
+[diff]
+[color]
+    ui = auto
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    di = diff
+[merge]
+    tool = vimdiff
