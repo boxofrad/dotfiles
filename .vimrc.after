@@ -31,3 +31,6 @@ vnoremap <silent> <expr> p <sid>Repl()
 
 " Open my notes file
 map <Leader>n :split ~/Dropbox/notes.txt<CR>
+
+" SRSLY, who actually uses Ex mode?
+map Q <Nop>
