@@ -28,3 +28,6 @@ function! s:Repl()
 endfunction
 
 vnoremap <silent> <expr> p <sid>Repl()
+
+" Open my notes file
+map <Leader>n :split ~/Dropbox/notes.txt<CR>
