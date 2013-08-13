@@ -1,0 +1,14 @@
+#!/bin/bash
+
+symlink() {
+  ln -fs `pwd`/$1 $HOME/
+}
+
+symlink .gvimrc.after
+symlink .janus
+symlink .tmux.conf
+symlink .vimrc.after
+symlink .zshrc
+
+git config user.name --global "Daniel Upton"
+git config user.email --global "daniel@floppy.co"
