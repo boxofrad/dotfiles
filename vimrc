@@ -12,7 +12,21 @@ set showcmd
 set incsearch
 set ignorecase
 set smartcase
+set nowrap
 set laststatus=2
+set backspace=indent,eol,start
+
+" Ignore this junk
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+set wildignore+=*.swp,*~,._*
+
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
+au VimLeave * :!clear
 
 " VIM, RVM and ZSH on OSX gets a little weird
 set shell=bash
@@ -30,6 +44,44 @@ set expandtab
 
 " Display trailing whitespace
 set list listchars=tab:»·,trail:·
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+augroup vimrcEx
+  autocmd!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Cucumber navigation commands
+  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+
+  " .md is markdown
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+  " Enable spellchecking for Markdown
+  autocmd BufRead,BufNewFile *.md setlocal spell
+
+  " Automatically wrap at 80 characters for Markdown
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup END
+
+" Use Ag over Grep
+set grepprg=ag\ --nogroup\ --nocolor
+
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 """"""""""
 " Colour "
@@ -194,3 +246,12 @@ function! RenameFile()
   endif
 endfunction
 :command! RenameFile :call RenameFile()
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Learn to use vim properly. you muppet
+nnoremap <Left> :echoe "Use h. you muppet"<CR>
+nnoremap <Right> :echoe "Use l. you muppet"<CR>
+nnoremap <Up> :echoe "Use k. you muppet"<CR>
+nnoremap <Down> :echoe "Use j. you muppet"<CR>

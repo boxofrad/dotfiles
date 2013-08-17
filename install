@@ -12,3 +12,8 @@ symlink zshrc
 symlink vim
 symlink gvimrc
 symlink vimrc
+
+if [ ! -d ~/.vim/bundle/vundle/.git ]; then
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  vim +BundleInstall +qall
+fi
