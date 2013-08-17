@@ -6,7 +6,6 @@ symlink() {
   ln -fs $src $dest
 }
 
-
 symlink gitconfig
 symlink tmux.conf
 symlink zshrc
