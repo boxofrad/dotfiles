@@ -125,6 +125,13 @@ Bundle 'ddollar/nerdcommenter'
 " RSpec runner
 Bundle 'skalnik/vim-vroom'
 
+let g:vroom_use_dispatch = 1
+let g:vroom_use_bundle_exec = 0
+let g:vroom_use_spring = 1
+
+" Async testing
+Bundle 'tpope/vim-dispatch'
+
 " Tab key
 Bundle 'ervandew/supertab'
 
