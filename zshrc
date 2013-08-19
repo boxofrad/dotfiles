@@ -45,4 +45,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TERM=xterm-256color
 
 # Hack to get RVM to working in tmux
-cd ..;1
+cd ..;1 >> /dev/null
