@@ -45,10 +45,6 @@ set expandtab
 " Display trailing whitespace
 set list listchars=tab:»·,trail:·
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
 augroup vimrcEx
   autocmd!
 
