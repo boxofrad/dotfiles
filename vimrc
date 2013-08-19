@@ -76,9 +76,6 @@ augroup END
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
 
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
 """"""""""
 " Colour "
 """"""""""
@@ -111,6 +108,9 @@ Bundle 'tpope/vim-rails'
 
 " Quick file switching
 Bundle 'kien/ctrlp.vim'
+
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Searching with the silver searcher
 Bundle 'rking/ag.vim'
@@ -258,3 +258,15 @@ nnoremap <Left> :echoe "Use h. you muppet"<CR>
 nnoremap <Right> :echoe "Use l. you muppet"<CR>
 nnoremap <Up> :echoe "Use k. you muppet"<CR>
 nnoremap <Down> :echoe "Use j. you muppet"<CR>
+
+" Tabularize the hashrocket
+map <Leader>t :Tabularize/=><CR>
+
+" Line assignments up
+map <Leader>= :Tabularize/=<CR>
+
+" Prettify some JSON
+map <Leader>j :%!python -m json.tool<CR>
+
+" Open the current folder in finder
+map <Leader>o :!open %:h<CR>
