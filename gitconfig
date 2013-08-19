@@ -1,6 +1,7 @@
 [user]
   email = daniel@floppy.co
   name = Daniel Upton
+
 [diff]
 [color]
     ui = auto
@@ -10,5 +11,7 @@
     ci = commit
     co = checkout
     di = diff
+    cp = cherry-pick
+
 [merge]
     tool = vimdiff
