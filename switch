@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm -rf $HOME/.vim
+rm -rf $HOME/.janus
+rm -rf $HOME/.vimrc
+rm -rf $HOME/.vimrc.after
+rm -rf $HOME/.gvimrc
+rm -rf $HOME/.gvimrc.after
+rm -rf $HOME/.tmux.conf
+rm -rf $HOME/.zshrc
+rm -rf $HOME/.gitconfig
+
+./install
