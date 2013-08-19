@@ -41,3 +41,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Oh! the sad state of compilers on OSX...
 # http://stackoverflow.com/questions/8032824/cant-install-ruby-under-lion-with-rvm-gcc-issues
 # CC=/usr/bin/gcc-4.2
+
+export TERM=xterm-256color
+
+# Hack to get RVM to working in tmux
+cd ..;1
