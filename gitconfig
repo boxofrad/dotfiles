@@ -15,3 +15,5 @@
 
 [merge]
     tool = vimdiff
+[github]
+	user = boxofrad
