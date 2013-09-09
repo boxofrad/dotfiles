@@ -124,6 +124,7 @@ Bundle 'skalnik/vim-vroom'
 let g:vroom_use_dispatch = 1
 let g:vroom_use_bundle_exec = 0
 let g:vroom_use_spring = 1
+let g:vroom_cucumber_path = 'cucumber'
 
 " Async testing
 Bundle 'tpope/vim-dispatch'
