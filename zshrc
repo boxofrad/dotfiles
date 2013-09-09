@@ -46,3 +46,8 @@ export TERM=xterm-256color
 
 # Hack to get RVM to working in tmux
 cd ..;1 >> /dev/null
+
+if [ `which mvim` != "" ]; then
+  alias vi="mvim -v"
+  alias vim="mvim -v"
+fi
