@@ -134,6 +134,9 @@ Bundle 'ervandew/supertab'
 " Syntax checking
 Bundle 'scrooloose/syntastic'
 
+" File tree
+Bundle 'scrooloose/nerdtree'
+
 " Gist
 Bundle 'mattn/gist-vim'
 
