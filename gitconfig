@@ -12,6 +12,7 @@
     co = checkout
     di = diff
     cp = cherry-pick
+    down = pull --rebase origin master
 
 [merge]
     tool = vimdiff
