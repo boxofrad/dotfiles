@@ -9,14 +9,10 @@ export TERM=xterm-256color
 
 # RVM or rbenv... depending on my mood
 if [ -d $HOME/.rvm ]; then
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-  # Hack to get RVM to working in tmux
-  cd ..;1 >> /dev/null
-else
-  if which rbenv > /dev/null; then
-    eval "$(rbenv init -)"
-  fi
+  PATH=$PATH:$HOME/.rvm/bin
+  cd ..;1 >> /dev/null # tmux hack
+elif which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
 fi
 
 if [ `which mvim` != "" ]; then
