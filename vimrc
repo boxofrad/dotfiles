@@ -140,6 +140,7 @@ Bundle 'scrooloose/nerdtree'
 
 " Gist
 Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 
 " Nice way to work on just a small chunk of a file
 Bundle 'chrisbra/NrrwRgn'
