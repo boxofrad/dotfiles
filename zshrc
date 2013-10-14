@@ -22,6 +22,3 @@ fi
 
 # http://robots.thoughtbot.com/post/27985816073/the-hitchhikers-guide-to-riding-a-mountain-lion
 export CPPFLAGS=-I/opt/X11/include
-
-# NPM
-PATH=$PATH:/usr/local/share/npm/bin
