@@ -22,3 +22,6 @@ fi
 
 # http://robots.thoughtbot.com/post/27985816073/the-hitchhikers-guide-to-riding-a-mountain-lion
 export CPPFLAGS=-I/opt/X11/include
+
+# Android SDK
+export ANDROID_HOME=/usr/local/opt/android-sdk
