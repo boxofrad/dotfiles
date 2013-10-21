@@ -100,6 +100,13 @@ call vundle#rc()
 " Plugin management
 Bundle 'gmarik/vundle'
 
+" Ruby ruby ruby ruby!
+Bundle 'vim-ruby/vim-ruby'
+runtime macros/matchit.vim
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'tpope/vim-bundler'
+
 " Git
 Bundle 'tpope/vim-fugitive'
 
