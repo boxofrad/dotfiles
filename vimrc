@@ -221,6 +221,7 @@ map Q <Nop>
 
 " Leader-G to open git status and go to first modified file
 map <Leader>g :Gstatus<CR>/modified<CR>:noh<CR>
+map <Leader>G :Gcommit<CR>ggi
 
 " Leader-dp to stage a hunk
 map <Leader>dp :diffput<CR>
