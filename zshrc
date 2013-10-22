@@ -4,7 +4,7 @@ ZSH_THEME="zhann"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/local/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin
 export TERM=xterm-256color
 
 # RVM or rbenv... depending on my mood
@@ -25,3 +25,9 @@ export CPPFLAGS=-I/opt/X11/include
 
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# Aliases
+alias b="bundle exec"
+
+# node.js
+export PATH="./node_modules/.bin:$PATH"
