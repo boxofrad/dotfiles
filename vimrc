@@ -283,3 +283,6 @@ map <Leader>j :%!python -m json.tool<CR>
 
 " Open the current folder in finder
 map <Leader>o :!open %:h<CR>
+
+" Kick off XCode build on "Project X"
+map <D-r> :Dispatch! make run <CR>
