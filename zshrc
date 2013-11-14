@@ -39,3 +39,6 @@ export PATH="./node_modules/.bin:$PATH"
 # Let's a go!
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# Private stuff
+source $HOME/Dropbox/private.zsh
