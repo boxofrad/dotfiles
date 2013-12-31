@@ -26,8 +26,12 @@ export CPPFLAGS=-I/opt/X11/include
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+# Secret stuff I don't want on github
+source ~/Dropbox/private.zsh
+
 # Aliases
 alias b="bundle exec"
+alias kcc-ip="curl -u '$KCC_IP_CREDENTIALS' http://kcc-ip-tracker.herokuapp.com/current"
 
 # node.js
 export PATH="./node_modules/.bin:$PATH"
