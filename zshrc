@@ -31,7 +31,11 @@ source ~/Dropbox/private.zsh
 
 # Aliases
 alias b="bundle exec"
-alias kcc-ip="curl -u '$KCC_IP_CREDENTIALS' http://kcc-ip-tracker.herokuapp.com/current"
+
+kcc-ip() {
+  curl -u "$KCC_IP_CREDENTIALS" http://kcc-ip-tracker.herokuapp.com/current
+  echo
+}
 
 # node.js
 export PATH="./node_modules/.bin:$PATH"
