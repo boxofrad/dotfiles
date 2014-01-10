@@ -31,6 +31,13 @@ source ~/Dropbox/private.zsh
 
 # Aliases
 alias b="bundle exec"
+alias g="git"
+alias t="bundle exec rspec"
+alias r="bundle exec rails"
+alias rgm="bundle exec rails g migration"
+alias work="cd ~/work"
+alias src="cd ~/src"
+alias dotfiles="cd ~/src/dotfiles"
 
 kcc-ip() {
   curl -u "$KCC_IP_CREDENTIALS" http://kcc-ip-tracker.herokuapp.com/current
