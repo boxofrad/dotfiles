@@ -19,3 +19,5 @@
 
 [github]
     user = boxofrad
+[core]
+  excludesfile = ~/.gitignore_global

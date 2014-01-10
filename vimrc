@@ -286,3 +286,8 @@ map <Leader>o :!open %:h<CR>
 
 " Kick off XCode build on "Project X"
 map <D-r> :Dispatch! make run <CR>
+
+" Project specific stuff
+if filereadable(".dupton")
+  source .dupton
+endif
