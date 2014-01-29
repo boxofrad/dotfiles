@@ -291,3 +291,7 @@ map <D-r> :Dispatch! make run <CR>
 if filereadable(".dupton")
   source .dupton
 endif
+
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized

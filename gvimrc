@@ -1,4 +1,4 @@
-colorscheme Tomorrow-Night
+set background=light
 set guifont=Monaco:h15
 
 " Hide GUI Toolbar
