@@ -11,6 +11,7 @@ symlink gitignore_global
 symlink tmux.conf
 symlink zshrc
 symlink vim
+symlink git_template
 symlink gvimrc
 symlink vimrc
 symlink irbrc
