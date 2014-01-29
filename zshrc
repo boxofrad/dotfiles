@@ -79,5 +79,5 @@ source $HOME/Dropbox/private.zsh
 export EDITOR="mvim -v"
 
 rawr() {
-  rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/rails-application/files/template.rb
+  rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/files/rails-application-template.rb
 }
