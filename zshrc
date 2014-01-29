@@ -41,6 +41,17 @@ alias src="cd ~/src"
 alias dotfiles="cd ~/src/dotfiles"
 alias ta="tmux attach -t"
 
+# Fast things on rails
+alias srails="spring rails"
+alias sconsole="spring rails console"
+alias srspec="spring rspec"
+alias srake="spring rake"
+
+alias sr="spring rspec"
+alias rk="spring rake"
+alias rl="spring rails"
+alias rlc="spring rails console"
+
 kcc-ip() {
   curl -u "$KCC_IP_CREDENTIALS" http://kcc-ip-tracker.herokuapp.com/current
   echo
