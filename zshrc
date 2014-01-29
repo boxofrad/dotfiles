@@ -31,6 +31,7 @@ source ~/Dropbox/private.zsh
 
 # Aliases
 alias b="bundle exec"
+alias brake="bundle exec rake"
 alias g="git"
 alias t="bundle exec rspec"
 alias r="bundle exec rails"
@@ -38,10 +39,21 @@ alias rgm="bundle exec rails g migration"
 alias work="cd ~/work"
 alias src="cd ~/src"
 alias dotfiles="cd ~/src/dotfiles"
+alias ta="tmux attach -t"
 
 kcc-ip() {
   curl -u "$KCC_IP_CREDENTIALS" http://kcc-ip-tracker.herokuapp.com/current
   echo
+}
+
+# start a rails server on the first available port
+server() {
+  port=3000
+  while lsof -i :$port >> /dev/null
+  do
+    port=$[$port +1]
+  done
+  bundle exec rails server -p $port
 }
 
 # node.js
@@ -53,3 +65,8 @@ export PATH=$PATH:$GOPATH/bin
 
 # Private stuff
 source $HOME/Dropbox/private.zsh
+export EDITOR="mvim -v"
+
+rawr() {
+  rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/rails-application/files/template.rb
+}
