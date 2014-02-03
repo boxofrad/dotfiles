@@ -52,6 +52,8 @@ alias rk="spring rake"
 alias rl="spring rails"
 alias rlc="spring rails console"
 
+alias m="mvim"
+
 kcc-ip() {
   curl -u "$KCC_IP_CREDENTIALS" http://kcc-ip-tracker.herokuapp.com/current
   echo
