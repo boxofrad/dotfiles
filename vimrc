@@ -295,3 +295,8 @@ endif
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
+
+" Wrap rails < 4 scope in a lambda
+" scope :foos, where(foo: true)
+" scope :foos, -> { where(foo: bar) }
+map <Leader>l ^f,a -> {A }
