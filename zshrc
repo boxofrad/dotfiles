@@ -83,3 +83,9 @@ export EDITOR="mvim -v"
 rawr() {
   rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/files/rails-application-template.rb
 }
+
+password-hash() {
+  openssl passwd -1 $1
+}
+
+alias kill-it-with-fire="git reset --hard HEAD && git clean -df"
