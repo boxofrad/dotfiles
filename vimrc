@@ -34,6 +34,10 @@ set shell=bash
 " Relative line numbers <3
 set relativenumber
 
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
+
 " Syntax highlighting
 syntax on
 
