@@ -165,6 +165,9 @@ Bundle 'godlygeek/tabular'
 " Emmet
 Bundle 'mattn/emmet-vim'
 
+" Markdown
+Bundle 'itspriddle/vim-marked'
+
 " Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "tomtom/tlib_vim"
@@ -304,3 +307,6 @@ colorscheme solarized
 " scope :foos, where(foo: true)
 " scope :foos, -> { where(foo: bar) }
 map <Leader>l ^f,a -> {A }
+
+" Markdown
+map <Leader>m :MarkedOpen!<CR>
