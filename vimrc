@@ -191,9 +191,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-markdown'
 Bundle 'mmalecki/vim-node.js'
-Bundle 'tpope/vim-rails'
 Bundle 'skwp/vim-rspec'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'cakebaker/scss-syntax.vim'
 
 filetype plugin indent on
