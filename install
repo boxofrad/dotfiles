@@ -15,8 +15,18 @@ symlink git_template
 symlink gvimrc
 symlink vimrc
 symlink irbrc
+symlink offlineimaprc
+symlink mutt
+symlink muttrc
+symlink urlview
+symlink msmtprc
+symlink notmuch-config
 
 if [ ! -d ~/.vim/bundle/vundle/.git ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   vim +BundleInstall +qall
+fi
+
+if [ ! -d ~/.mail ]; then
+  mkdir ~/.mail
 fi

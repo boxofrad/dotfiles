@@ -79,6 +79,7 @@ export PATH=$PATH:$GOPATH/bin
 # Private stuff
 source $HOME/Dropbox/private.zsh
 export EDITOR="mvim -v"
+PATH=~/src/dotfiles/bin:$PATH
 
 rawr() {
   rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/files/rails-application-template.rb
