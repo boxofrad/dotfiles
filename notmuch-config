@@ -30,7 +30,8 @@ path=/Users/daniel/.mail
 #
 [user]
 name=Daniel Upton
-primary_email=dupton@rawnet.com
+primary_email=daniel@floppy.co
+other_email=dupton@rawnet.com
 
 # Configuration for "notmuch new"
 #

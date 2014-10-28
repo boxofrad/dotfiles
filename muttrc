@@ -23,10 +23,10 @@ set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 
 # Sidebar Patch --------------------------------------
-set sidebar_delim   = '  │'
-set sidebar_visible = yes
-set sidebar_width   = 24
-color sidebar_new color221 color233
+# set sidebar_delim   = '  │'
+# set sidebar_visible = yes
+# set sidebar_width   = 24
+# color sidebar_new color221 color233
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -45,6 +45,7 @@ set spoolfile = "+rawnet/INBOX"
 
 # Mailboxes to show in the sidebar.
 mailboxes +rawnet/INBOX \
+          +personal/INBOX \
           +rawnet/archive \
           +rawnet/sent \
           +rawnet/drafts \
@@ -114,14 +115,15 @@ macro pager \Cu "|urlview<enter>" "call urlview to open links"
 set realname = "Daniel Upton"        # who am i?
 set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
-set edit_headers                     # show headers when composing
+# set edit_headers                     # show headers when composing
 set fast_reply                       # skip to compose when replying
-set askcc                            # ask for CC:
+# set askcc                            # ask for CC:
 set fcc_attach                       # save attachments with the body
 unset mime_forward                   # forward attachments as part of body
 set forward_format = "Fwd: %s"       # format of subject when forwarding
 set forward_decode                   # decode when forwarding
-set attribution = "On %d, %n wrote:" # format of quoting header
+#set attribution = "On %d, %n wrote:" # format of quoting header
+set attribution = "" # format of quoting header
 set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
