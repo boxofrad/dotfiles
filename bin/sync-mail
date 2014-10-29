@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+cd ~/.mail || exit 1
+
+commit() {
+  message=$1
+
+  if [ -n "$(git status --porcelain)" ]; then
+    git add -A
+    git commit -m "$message" --quiet
+  fi
+}
+
+commit "Pre sync"
+offlineimap -q -u quiet
+notmuch new --quiet
+commit "Post sync"
