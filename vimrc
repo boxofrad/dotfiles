@@ -81,9 +81,6 @@ augroup vimrcEx
 
   " disable tab highlighting
   autocmd BufNewFile,BufRead *.go set nolist
-
-  " run gofmt on file save
-  autocmd FileType go autocmd BufWritePre <buffer> Fmt
 augroup END
 
 " Use Ag over Grep
@@ -153,7 +150,8 @@ let g:vroom_cucumber_path = 'cucumber'
 Bundle 'tpope/vim-dispatch'
 
 " Tab key
-Bundle 'ervandew/supertab'
+" Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
 
 " Syntax checking
 Bundle 'scrooloose/syntastic'
@@ -173,6 +171,7 @@ Bundle 'tpope/vim-surround'
 
 " Line things up
 Bundle 'godlygeek/tabular'
+let g:go_fmt_command = "goimports"
 
 " Emmet
 Bundle 'mattn/emmet-vim'
@@ -193,7 +192,7 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'jimenezrick/vimerl'
 Bundle 'tpope/vim-git'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'tpope/vim-haml'
 Bundle 'nono/vim-handlebars'
 Bundle 'pangloss/vim-javascript'
