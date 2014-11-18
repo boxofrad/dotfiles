@@ -4,6 +4,8 @@ set -e
 
 cd ~/.mail || exit 1
 
+echo "Syncing mail..."
+
 commit() {
   message=$1
 
