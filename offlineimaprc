@@ -52,40 +52,56 @@ pythonfile=~/.mutt/offlineimap.py
 localrepository = Personal-Local
 remoterepository = Personal-Remote
 status_backend = sqlite
-# postsynchook = notmuch new
 
 [Repository Personal-Local]
 type = Maildir
 localfolders = ~/.mail/personal
-nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-                            'sent':    '[Gmail]/Sent Mail',
-                            'flagged': '[Gmail]/Starred',
-                            'trash':   '[Gmail]/Trash',
-                            'archive': '[Gmail]/All Mail',
-                            }.get(folder, folder)
+nametrans = lambda folder: re.sub('^(?!INBOX)', 'INBOX.', folder)
 
 [Repository Personal-Remote]
 maxconnections = 1
-type = Gmail
-remoteuser = daniel@floppy.co
-remotepasseval = get_keychain_pass(account="daniel@floppy.co", server="imap.gmail.com")
-realdelete = no
+remotepasseval = get_keychain_pass(account="dup@fea.st", server="mail.messagingengine.com")
 sslcacertfile = ~/.mutt/dummycert.pem
-nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
-                            '[Gmail]/Sent Mail': 'sent',
-                            '[Gmail]/Starred':   'flagged',
-                            '[Gmail]/Trash':     'trash',
-                            '[Gmail]/All Mail':  'archive',
-                            }.get(folder, folder)
-folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
-                                             '[Gmail]/Important',
-                                             '[Gmail]/Spam',
-                                             '[Gmail]/Bin',
-                                             '[Gmail]/Drafts',
-                                             '[Mailbox]',
-                                             '[Mailbox]/Later',
-                                             '[Mailbox]/To Buy',
-                                             '[Mailbox]/To Read',
-                                             '[Mailbox]/To Watch',
-                                             '[Mailbox]/Links',
-                                             'Deleted Messages']
+ssl = yes
+type = IMAP
+remotehost = mail.messagingengine.com
+remoteport = 993
+remoteuser = dup@fea.st
+nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
+
+# GMAIL
+# [Repository Personal-Local]
+# type = Maildir
+# localfolders = ~/.mail/personal
+# nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+#                             'sent':    '[Gmail]/Sent Mail',
+#                             'flagged': '[Gmail]/Starred',
+#                             'trash':   '[Gmail]/Trash',
+#                             'archive': '[Gmail]/All Mail',
+#                             }.get(folder, folder)
+# 
+# [Repository Personal-Remote]
+# maxconnections = 1
+# type = Gmail
+# remoteuser = daniel@floppy.co
+# remotepasseval = get_keychain_pass(account="daniel@floppy.co", server="imap.gmail.com")
+# realdelete = no
+# sslcacertfile = ~/.mutt/dummycert.pem
+# nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+#                             '[Gmail]/Sent Mail': 'sent',
+#                             '[Gmail]/Starred':   'flagged',
+#                             '[Gmail]/Trash':     'trash',
+#                             '[Gmail]/All Mail':  'archive',
+#                             }.get(folder, folder)
+# folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+#                                              '[Gmail]/Important',
+#                                              '[Gmail]/Spam',
+#                                              '[Gmail]/Bin',
+#                                              '[Gmail]/Drafts',
+#                                              '[Mailbox]',
+#                                              '[Mailbox]/Later',
+#                                              '[Mailbox]/To Buy',
+#                                              '[Mailbox]/To Read',
+#                                              '[Mailbox]/To Watch',
+#                                              '[Mailbox]/Links',
+#                                              'Deleted Messages']

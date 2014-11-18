@@ -22,12 +22,6 @@ set beep_new             # bell on new mails
 set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 
-# Sidebar Patch --------------------------------------
-# set sidebar_delim   = '  │'
-# set sidebar_visible = yes
-# set sidebar_width   = 24
-# color sidebar_new color221 color233
-
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
@@ -41,22 +35,16 @@ hdr_order from: to: cc: date: subject:  # and in this order
 # Account Settings -----------------------------------
 
 # Default inbox.
-set spoolfile = "+rawnet/INBOX"
-
-# Mailboxes to show in the sidebar.
-mailboxes +rawnet/INBOX \
-          +personal/INBOX \
-          +rawnet/archive \
-          +rawnet/sent \
-          +rawnet/drafts \
-          +temporary/search \
+set spoolfile = "=personal/INBOX"
 
 # Other special folders.
-set mbox      = "+rawnet/archive"
-set postponed = "+rawnet/drafts"
+set mbox      = "=personal/Archive"
+set postponed = "=personal/Drafts"
+set copy      = yes
+set record    = "=personal/Sent Items"
 
 # Index View Options ---------------------------------
-set date_format = "%m/%d"
+set date_format = "%d/%m/%y"
 set index_format = "[%Z]  %D  %-20.20F  %s"
 set sort = threads                         # like gmail
 set sort_aux = reverse-last-date-received  # like gmail
@@ -76,8 +64,7 @@ bind index <space>  collapse-thread
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 # Sync email
-macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+macro index o "<shell-escape>sync-mail<enter>" "sync mail"
 
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
@@ -97,6 +84,7 @@ set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
 
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+auto_view text/html
 alternative_order text/plain text/enriched text/html
 
 # Pager Key Bindings ---------------------------------
@@ -115,24 +103,21 @@ macro pager \Cu "|urlview<enter>" "call urlview to open links"
 set realname = "Daniel Upton"        # who am i?
 set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
-# set edit_headers                     # show headers when composing
+set edit_headers                     # show headers when composing
 set fast_reply                       # skip to compose when replying
-# set askcc                            # ask for CC:
 set fcc_attach                       # save attachments with the body
 unset mime_forward                   # forward attachments as part of body
 set forward_format = "Fwd: %s"       # format of subject when forwarding
 set forward_decode                   # decode when forwarding
-#set attribution = "On %d, %n wrote:" # format of quoting header
-set attribution = "" # format of quoting header
+set attribution = "On %d, %n wrote:" # format of quoting header
 set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
-set from     = "dupton@rawnet.com"
-set sendmail = "/usr/local/bin/msmtp -a rawnet"
+set from          = "daniel@floppy.co"
+set sendmail      = "/usr/local/bin/msmtp -a personal"
 set sendmail_wait = 0
-unset record
 
 bind compose p postpone-message
 bind index p recall-message
