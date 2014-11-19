@@ -1,51 +1,8 @@
 [general]
 ui = ttyui
-accounts = Personal
+accounts = Personal, Rawnet
 pythonfile=~/.mutt/offlineimap.py
 
-# Work Email -------------------------------
-
-# [Account Rawnet]
-# localrepository = Rawnet-Local
-# remoterepository = Rawnet-Remote
-# status_backend = sqlite
-# postsynchook = notmuch new
-# 
-# [Repository Rawnet-Local]
-# type = Maildir
-# localfolders = ~/.mail/rawnet
-# nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-#                             'sent':    '[Gmail]/Sent Mail',
-#                             'flagged': '[Gmail]/Starred',
-#                             'trash':   '[Gmail]/Trash',
-#                             'archive': '[Gmail]/All Mail',
-#                             }.get(folder, folder)
-# 
-# [Repository Rawnet-Remote]
-# maxconnections = 1
-# type = Gmail
-# remoteuser = dupton@rawnet.com
-# remotepasseval = get_keychain_pass(account="dupton@rawnet.com", server="imap.gmail.com")
-# realdelete = no
-# sslcacertfile = ~/.mutt/dummycert.pem
-# nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
-#                             '[Gmail]/Sent Mail': 'sent',
-#                             '[Gmail]/Starred':   'flagged',
-#                             '[Gmail]/Trash':     'trash',
-#                             '[Gmail]/All Mail':  'archive',
-#                             }.get(folder, folder)
-# folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
-#                                              '[Gmail]/Important',
-#                                              '[Gmail]/Spam',
-#                                              '[Gmail]/Bin',
-#                                              '[Mailbox]',
-#                                              '[Mailbox]/Later',
-#                                              '[Mailbox]/To Buy',
-#                                              '[Mailbox]/To Read',
-#                                              '[Mailbox]/To Watch',
-#                                              '[Mailbox]/Links',
-#                                              'Deleted Messages']
-# 
 # Personal Email -------------------------------
 
 [Account Personal]
@@ -69,39 +26,32 @@ remoteport = 993
 remoteuser = dup@fea.st
 nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
 
-# GMAIL
-# [Repository Personal-Local]
-# type = Maildir
-# localfolders = ~/.mail/personal
-# nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-#                             'sent':    '[Gmail]/Sent Mail',
-#                             'flagged': '[Gmail]/Starred',
-#                             'trash':   '[Gmail]/Trash',
-#                             'archive': '[Gmail]/All Mail',
-#                             }.get(folder, folder)
-# 
-# [Repository Personal-Remote]
-# maxconnections = 1
-# type = Gmail
-# remoteuser = daniel@floppy.co
-# remotepasseval = get_keychain_pass(account="daniel@floppy.co", server="imap.gmail.com")
-# realdelete = no
-# sslcacertfile = ~/.mutt/dummycert.pem
-# nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
-#                             '[Gmail]/Sent Mail': 'sent',
-#                             '[Gmail]/Starred':   'flagged',
-#                             '[Gmail]/Trash':     'trash',
-#                             '[Gmail]/All Mail':  'archive',
-#                             }.get(folder, folder)
-# folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
-#                                              '[Gmail]/Important',
-#                                              '[Gmail]/Spam',
-#                                              '[Gmail]/Bin',
-#                                              '[Gmail]/Drafts',
-#                                              '[Mailbox]',
-#                                              '[Mailbox]/Later',
-#                                              '[Mailbox]/To Buy',
-#                                              '[Mailbox]/To Read',
-#                                              '[Mailbox]/To Watch',
-#                                              '[Mailbox]/Links',
-#                                              'Deleted Messages']
+# Work Email -------------------------------
+
+[Account Rawnet]
+localrepository = Rawnet-Local
+remoterepository = Rawnet-Remote
+status_backend = sqlite
+
+[Repository Rawnet-Local]
+type = Maildir
+localfolders = ~/.mail/rawnet
+nametrans = lambda folder: {'Drafts':     '[Gmail]/Drafts',
+                            'Archive':    '[Gmail]/All Mail',
+                            'Sent Items': '[Gmail]/Sent Mail',
+                            'Trash':      '[Gmail]/Bin',
+                            'Junk Mail':  '[Gmail]/Spam',}.get(folder, folder)
+
+[Repository Rawnet-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = dupton@rawnet.com
+remotepasseval = get_keychain_pass(account="dupton@rawnet.com", server="imap.gmail.com")
+realdelete = no
+sslcacertfile = ~/.mutt/dummycert.pem
+nametrans = lambda folder: {'[Gmail]/Drafts':    'Drafts',
+                            '[Gmail]/All Mail':  'Archive',
+                            '[Gmail]/Sent Mail': 'Sent Items',
+                            '[Gmail]/Bin':       'Trash',
+                            '[Gmail]/Spam':      'Junk Mail'}.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Important', '[Gmail]/Starred']

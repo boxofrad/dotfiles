@@ -1,0 +1,6 @@
+set spoolfile = "=rawnet/INBOX"
+set mbox      = "=rawnet/Archive"
+set postponed = "=rawnet/Drafts"
+set copy      = no
+set from      = "dupton@rawnet.com"
+set sendmail  = "/usr/local/bin/msmtp -a rawnet"

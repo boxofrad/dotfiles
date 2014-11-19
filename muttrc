@@ -32,17 +32,6 @@ unignore from: to: cc: date: subject:   # show only these
 unhdr_order *                           # some distros order things by default
 hdr_order from: to: cc: date: subject:  # and in this order
 
-# Account Settings -----------------------------------
-
-# Default inbox.
-set spoolfile = "=personal/INBOX"
-
-# Other special folders.
-set mbox      = "=personal/Archive"
-set postponed = "=personal/Drafts"
-set copy      = yes
-set record    = "=personal/Sent Items"
-
 # Index View Options ---------------------------------
 set date_format = "%d/%m/%y"
 set index_format = "[%Z]  %D  %-20.20F  %s"
@@ -115,8 +104,6 @@ set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
-set from          = "daniel@floppy.co"
-set sendmail      = "/usr/local/bin/msmtp -a personal"
 set sendmail_wait = 0
 
 bind compose p postpone-message
@@ -134,3 +121,7 @@ macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py
 
 # Color Scheme
 source ~/.mutt/colors
+source ~/.mutt/personal
+
+folder-hook =personal/ 'source ~/.mutt/personal'
+folder-hook =rawnet/ 'source ~/.mutt/rawnet'
