@@ -89,4 +89,8 @@ password-hash() {
   openssl passwd -1 $1
 }
 
-alias kill-it-with-fire="git reset --hard HEAD && git clean -df"
+git-remove-untracked() {
+  git status --porcelain | grep '^??' | awk '{print $2}' | xargs rm
+}
+
+alias kill-it-with-fire="git reset --hard HEAD && git-remove-untracked"
