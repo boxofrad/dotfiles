@@ -109,6 +109,7 @@ call vundle#rc()
 
 " Plugin management
 Bundle 'gmarik/vundle'
+Bundle 'vim-scripts/ZoomWin'
 
 " Ruby ruby ruby ruby!
 Bundle 'vim-ruby/vim-ruby'
