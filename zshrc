@@ -32,6 +32,8 @@ source ~/Dropbox/private.zsh
 # Aliases
 alias b="bundle exec"
 alias brake="bundle exec rake"
+alias git="hub"
+alias twr="gittower"
 alias g="git"
 alias t="bundle exec rspec"
 alias r="bundle exec rails"
@@ -40,6 +42,9 @@ alias work="cd ~/work"
 alias src="cd ~/src"
 alias dotfiles="cd ~/src/dotfiles"
 alias ta="tmux attach -t"
+alias gl="git l"
+alias gpom="git push origin master"
+alias gdo="git down"
 
 # Fast things on rails
 alias srails="spring rails"
@@ -51,6 +56,8 @@ alias sr="spring rspec"
 alias rk="spring rake"
 alias rl="spring rails"
 alias rlc="spring rails console"
+alias cpd="cap production deploy:migrations"
+alias csd="cap staging deploy:migrations"
 
 alias m="mvim"
 
@@ -94,3 +101,10 @@ git-remove-untracked() {
 }
 
 alias kill-it-with-fire="git reset --hard HEAD && git-remove-untracked"
+
+# added by travis gem
+[ -f /Users/daniel/.travis/travis.sh ] && source /Users/daniel/.travis/travis.sh
+
+function rclone() {
+  git clone git@github.com:rawnet/$1.git
+}

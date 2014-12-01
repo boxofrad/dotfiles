@@ -8,6 +8,7 @@ symlink() {
 
 symlink gitconfig
 symlink gitignore_global
+symlink githelpers
 symlink tmux.conf
 symlink zshrc
 symlink vim

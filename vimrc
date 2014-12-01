@@ -118,6 +118,9 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'tpope/vim-bundler'
 
+" Awwww yeaaaaaaaa
+Bundle 'tpope/vim-unimpaired'
+
 " Handy UNIX stuff
 Bundle 'tpope/vim-eunuch'
 
