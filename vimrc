@@ -154,8 +154,7 @@ let g:vroom_cucumber_path = 'cucumber'
 Bundle 'tpope/vim-dispatch'
 
 " Tab key
-" Bundle 'ervandew/supertab'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'ervandew/supertab'
 
 " Syntax checking
 Bundle 'scrooloose/syntastic'
