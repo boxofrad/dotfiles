@@ -150,11 +150,13 @@ let g:vroom_use_bundle_exec = 0
 let g:vroom_cucumber_path = 'cucumber'
 
 " Use spring if it's available
-call system('grep spring Gemfile')
-if v:shell_error
-  let g:vroom_use_spring = 0
-else
-  let g:vroom_use_spring = 1
+if filereadable('Gemfile')
+  call system('grep spring Gemfile')
+  if v:shell_error
+    let g:vroom_use_spring = 0
+  else
+    let g:vroom_use_spring = 1
+  end
 end
 
 " Async testing
