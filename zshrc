@@ -7,13 +7,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/.bin
 export TERM=screen-256color
 
-# RVM or rbenv... depending on my mood
-if [ -d $HOME/.rvm ]; then
-  PATH=$PATH:$HOME/.rvm/bin
-  cd ..;1 >> /dev/null # tmux hack
-elif which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
+eval "$(rbenv init -)"
 
 if [ `which mvim` != "" ]; then
   alias vi="mvim -v"
