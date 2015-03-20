@@ -1,7 +1,0 @@
-set spoolfile = "=personal/INBOX"
-set mbox      = "=personal/Archive"
-set postponed = "=personal/Drafts"
-set copy      = yes
-set record    = "=personal/Sent Items"
-set from      = "daniel@floppy.co"
-set sendmail  = "/usr/local/bin/msmtp -a personal"
