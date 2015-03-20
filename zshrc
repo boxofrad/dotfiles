@@ -56,8 +56,9 @@ alias sr="spring rspec"
 alias rk="spring rake"
 alias rl="spring rails"
 alias rlc="spring rails console"
-alias cpd="cap production deploy:migrations"
-alias csd="cap staging deploy:migrations"
+alias mig="spring rake db:migrate"
+alias cpd="bundle exec cap production deploy:migrations"
+alias csd="bundle exec cap staging deploy:migrations"
 
 alias m="mvim"
 
@@ -100,6 +101,10 @@ git-remove-untracked() {
   git status --porcelain | grep '^??' | awk '{print $2}' | xargs rm
 }
 
+install-project-ruby() {
+  rbenv install `cat .ruby-version` && gem update --system && gem install bundler
+}
+
 alias kill-it-with-fire="git reset --hard HEAD && git-remove-untracked"
 
 # added by travis gem
@@ -107,4 +112,8 @@ alias kill-it-with-fire="git reset --hard HEAD && git-remove-untracked"
 
 function rclone() {
   git clone git@github.com:rawnet/$1.git
+}
+
+chefit() {
+  t=$(mktemp -dt chef-bootstrap); git clone git@github.com:rawnet/chef-bootstrap.git $t; ruby $t/bootstrap.rb
 }
