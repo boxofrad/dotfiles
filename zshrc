@@ -4,7 +4,7 @@ ZSH_THEME="zhann"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/.bin
 export TERM=screen-256color
 
 # RVM or rbenv... depending on my mood
@@ -87,7 +87,6 @@ export PATH=$PATH:$GOPATH/bin
 # Private stuff
 source $HOME/Dropbox/private.zsh
 export EDITOR="mvim -v"
-PATH=~/src/dotfiles/bin:$PATH
 
 rawr() {
   rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/files/rails-application-template.rb
