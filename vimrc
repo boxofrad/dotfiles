@@ -239,7 +239,7 @@ map <Leader>y <C-Y>,
 imap <Leader>y <C-Y>,
 
 " Leader-S to search
-map <Leader>s :Ag ''<Left>
+map <Leader>s :Ag -i ''<Left>
 
 " Leader-N to open my notes file
 map <Leader>n :split ~/Dropbox/notes.txt<CR>
