@@ -188,6 +188,9 @@ let g:go_fmt_command = "goimports"
 " Emmet
 Bundle 'mattn/emmet-vim'
 
+" Awesomer split navigation
+Bundle 'christoomey/vim-tmux-navigator'
+
 " Markdown
 Bundle 'itspriddle/vim-marked'
 
