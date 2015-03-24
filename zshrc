@@ -110,3 +110,7 @@ function rclone() {
 chefit() {
   t=$(mktemp -dt chef-bootstrap); git clone git@github.com:rawnet/chef-bootstrap.git $t; ruby $t/bootstrap.rb
 }
+
+alias :sp="tmux split-window"
+alias :vsp="tmux split-window -h"
+alias :q="exit"
