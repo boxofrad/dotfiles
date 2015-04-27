@@ -54,6 +54,17 @@ alias mig="spring rake db:migrate"
 alias cpd="bundle exec cap production deploy:migrations"
 alias csd="bundle exec cap staging deploy:migrations"
 
+rb() {
+  step=$1
+
+  if [ -z "$step" ]; then
+    step=1
+  fi
+
+  spring rake db:rollback STEP=$step
+  spring rake db:rollback STEP=$step RAILS_ENV=test
+}
+
 alias m="mvim"
 
 kcc-ip() {
