@@ -108,42 +108,42 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Plugin management
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/ZoomWin'
+Plugin 'gmarik/vundle'
+Plugin 'vim-scripts/ZoomWin'
 
 " Ruby ruby ruby ruby!
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 runtime macros/matchit.vim
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'tpope/vim-bundler'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'tpope/vim-bundler'
 
 " Awwww yeaaaaaaaa
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
 " Handy UNIX stuff
-Bundle 'tpope/vim-eunuch'
+Plugin 'tpope/vim-eunuch'
 
 " Git
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Rails stuff
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 
 " Quick file switching
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Searching with the silver searcher
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " Commenting
-Bundle 'ddollar/nerdcommenter'
+Plugin 'ddollar/nerdcommenter'
 
 " RSpec runner
-Bundle 'skalnik/vim-vroom'
+Plugin 'skalnik/vim-vroom'
 
 let g:vroom_use_dispatch = 1
 let g:vroom_use_bundle_exec = 0
@@ -160,62 +160,62 @@ if filereadable('Gemfile')
 end
 
 " Async testing
-Bundle 'tpope/vim-dispatch'
+Plugin 'tpope/vim-dispatch'
 
 " Tab key
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " File tree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " Gist
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
 
 " Nice way to work on just a small chunk of a file
-Bundle 'chrisbra/NrrwRgn'
+Plugin 'chrisbra/NrrwRgn'
 
 " Change surroundings
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " Line things up
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 let g:go_fmt_command = "goimports"
 
 " Emmet
-Bundle 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 
 " Awesomer split navigation
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Markdown
-Bundle 'itspriddle/vim-marked'
+Plugin 'itspriddle/vim-marked'
 
 " Snippets
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle "tomtom/tlib_vim"
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 " Extra syntax / file types
 " Bit of a grab bag really!
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-cucumber'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'jimenezrick/vimerl'
-Bundle 'tpope/vim-git'
-Bundle 'fatih/vim-go'
-Bundle 'tpope/vim-haml'
-Bundle 'nono/vim-handlebars'
-Bundle 'pangloss/vim-javascript'
-Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-markdown'
-Bundle 'mmalecki/vim-node.js'
-Bundle 'skwp/vim-rspec'
-Bundle 'cakebaker/scss-syntax.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-cucumber'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'jimenezrick/vimerl'
+Plugin 'tpope/vim-git'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-haml'
+Plugin 'nono/vim-handlebars'
+Plugin 'pangloss/vim-javascript'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
+Plugin 'mmalecki/vim-node.js'
+Plugin 'skwp/vim-rspec'
+Plugin 'cakebaker/scss-syntax.vim'
 
 filetype plugin indent on
 
