@@ -323,3 +323,18 @@ map <Leader>l ^f,a -> {A }
 
 " Markdown
 map <Leader>m :MarkedOpen!<CR>
+
+" Alternate file in Go, similar to :A in rails.vim
+function! GolangAlternate()
+  let filename = expand('%')
+
+  if match(filename, '_test') != -1
+    let alternate = substitute(filename,  '_test.go$', '.go', 'g')
+  else
+    let alternate = substitute(filename,  '.go$', '_test.go', 'g')
+  endif
+
+  execute "edit" alternate
+endfunction
+
+map <Leader>gla :call GolangAlternate()<CR>
