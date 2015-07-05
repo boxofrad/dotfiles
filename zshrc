@@ -1,7 +1,7 @@
 # Oh my ZSH! <3
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="zhann"
-plugins=(git vi-mode)
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/.bin
