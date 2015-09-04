@@ -20,6 +20,8 @@ else
   export EDITOR="vim"
 fi
 
+export EDITOR="mvim -v"
+
 # http://robots.thoughtbot.com/post/27985816073/the-hitchhikers-guide-to-riding-a-mountain-lion
 export CPPFLAGS=-I/opt/X11/include
 
@@ -77,11 +79,6 @@ rb() {
   spring rake db:rollback STEP=$step RAILS_ENV=test
 }
 
-kcc-ip() {
-  curl -u "$KCC_IP_CREDENTIALS" http://kcc-ip-tracker.herokuapp.com/current
-  echo
-}
-
 # start a rails server on the first available port
 server() {
   port=3000
@@ -116,21 +113,3 @@ install-project-ruby() {
 }
 
 alias kill-it-with-fire="git reset --hard HEAD && git-remove-untracked"
-
-# added by travis gem
-[ -f /Users/daniel/.travis/travis.sh ] && source /Users/daniel/.travis/travis.sh
-
-function rclone() {
-  git clone git@github.com:rawnet/$1.git
-}
-
-chefit() {
-  t=$(mktemp -dt chef-bootstrap); git clone git@github.com:rawnet/chef-bootstrap.git $t; ruby $t/bootstrap.rb
-}
-
-alias :sp="tmux split-window"
-alias :vsp="tmux split-window -h"
-alias :q="exit"
-
-bindkey -s '§' '\e'
-bindkey '^R' history-incremental-search-backward
