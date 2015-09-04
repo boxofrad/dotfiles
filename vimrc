@@ -86,14 +86,6 @@ augroup END
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
 
-""""""""""
-" Colour "
-""""""""""
-
-set t_Co=256
-set background=dark
-color grb256
-
 """""""""""""""
 " Status Line "
 """""""""""""""
@@ -314,7 +306,7 @@ endif
 
 set background=dark
 let g:solarized_termtrans = 1
-colorscheme solarized
+color solarized
 
 " Wrap rails < 4 scope in a lambda
 " scope :foos, where(foo: true)
