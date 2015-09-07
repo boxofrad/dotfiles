@@ -7,7 +7,10 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/.bin
 export TERM=screen-256color
 
-eval "$(rbenv init -)"
+if [ -n "$(command -v rbenv)" ]; then
+  eval "$(rbenv init -)"
+fi
+
 
 if [ `which mvim` != "" ]; then
   alias vi="mvim -v"
