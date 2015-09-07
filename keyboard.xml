@@ -6,4 +6,11 @@
     <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
     <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
   </item>
+
+  <item>
+    <name>Swap danish dollar and backquote</name>
+    <identifier>private.swap_danish_dollar_and_backquote</identifier>
+    <autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::DANISH_DOLLAR</autogen>
+  </item>
 </root>
