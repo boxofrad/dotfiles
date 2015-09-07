@@ -27,7 +27,7 @@ export CPPFLAGS=-I/opt/X11/include
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Secret stuff I don't want on github
-if [ -a ~/Dropbox/private.zsh ]; then
+if [ -f ~/Dropbox/private.zsh ]; then
   source ~/Dropbox/private.zsh
 fi
 
