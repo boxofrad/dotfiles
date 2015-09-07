@@ -11,10 +11,13 @@ if [ -n "$(command -v rbenv)" ]; then
   eval "$(rbenv init -)"
 fi
 
-
-if [ `which mvim` != "" ]; then
+if [ -n "$(command -v mvim)" ]; then
   alias vi="mvim -v"
   alias vim="mvim -v"
+  alias m="mvim"
+  export EDITOR="mvim -v"
+else
+  export EDITOR="vim"
 fi
 
 # http://robots.thoughtbot.com/post/27985816073/the-hitchhikers-guide-to-riding-a-mountain-lion
@@ -24,7 +27,9 @@ export CPPFLAGS=-I/opt/X11/include
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Secret stuff I don't want on github
-source ~/Dropbox/private.zsh
+if [ -a ~/Dropbox/private.zsh ]; then
+  source ~/Dropbox/private.zsh
+fi
 
 # Aliases
 alias b="bundle exec"
@@ -68,8 +73,6 @@ rb() {
   spring rake db:rollback STEP=$step RAILS_ENV=test
 }
 
-alias m="mvim"
-
 kcc-ip() {
   curl -u "$KCC_IP_CREDENTIALS" http://kcc-ip-tracker.herokuapp.com/current
   echo
@@ -91,10 +94,6 @@ export PATH="./node_modules/.bin:$PATH"
 # Let's a go!
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-
-# Private stuff
-source $HOME/Dropbox/private.zsh
-export EDITOR="mvim -v"
 
 rawr() {
   rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/files/rails-application-template.rb
