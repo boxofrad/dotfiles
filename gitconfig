@@ -32,3 +32,5 @@
   templatedir = ~/.git_template
 [push]
 	default = simple
+[credential]
+	helper = cache
