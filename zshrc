@@ -34,7 +34,11 @@ fi
 # Aliases
 alias b="bundle exec"
 alias brake="bundle exec rake"
-alias git="hub"
+
+if [ -n "$(command -v hub)" ]; then
+  alias git="hub"
+fi
+
 alias twr="gittower"
 alias g="git"
 alias t="bundle exec rspec"
