@@ -299,14 +299,6 @@ map <Leader>j :%!python -m json.tool<CR>
 " Open the current folder in finder
 map <Leader>o :!open %:h<CR>
 
-" Kick off XCode build on "Project X"
-map <D-r> :Dispatch! make run <CR>
-
-" Project specific stuff
-if filereadable(".dupton")
-  source .dupton
-endif
-
 set background=dark
 let g:solarized_termtrans = 1
 color solarized
@@ -315,9 +307,6 @@ color solarized
 " scope :foos, where(foo: true)
 " scope :foos, -> { where(foo: bar) }
 map <Leader>l ^f,a -> {A }
-
-" Markdown
-map <Leader>m :MarkedOpen!<CR>
 
 " Alternate file in Go, similar to :A in rails.vim
 function! GolangAlternate()
