@@ -170,7 +170,6 @@ Plugin 'tpope/vim-surround'
 
 " Line things up
 Plugin 'godlygeek/tabular'
-let g:go_fmt_command = "goimports"
 
 " Emmet
 Plugin 'mattn/emmet-vim'
@@ -194,7 +193,6 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'jimenezrick/vimerl'
 Plugin 'tpope/vim-git'
-Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-haml'
 Plugin 'nono/vim-handlebars'
 Plugin 'pangloss/vim-javascript'
@@ -203,6 +201,16 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mmalecki/vim-node.js'
 Plugin 'skwp/vim-rspec'
 Plugin 'cakebaker/scss-syntax.vim'
+
+" Go
+Plugin 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+
+" Please just let me live my life syntastic
+let g:syntastic_mode_map = {
+      \ 'mode': 'active',
+      \ 'passive_filetypes': ['go'] }
+
 
 filetype plugin indent on
 
