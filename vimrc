@@ -202,12 +202,29 @@ Plugin 'cakebaker/scss-syntax.vim'
 " Go
 Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
+let g:go_dispatch_enabled = 1
+let g:go_highlight_structs = 1
 
 " Please just let me live my life syntastic
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'passive_filetypes': ['go'] }
 
+" Alternate file similar to :A in rails.vim
+function! GolangAlternate()
+  let filename = expand('%')
+
+  if match(filename, '_test') != -1
+    let alternate = substitute(filename,  '_test.go$', '.go', 'g')
+  else
+    let alternate = substitute(filename,  '.go$', '_test.go', 'g')
+  endif
+
+  execute "edit" alternate
+endfunction
+
+au FileType go nmap <leader>t :Dispatch go test ./...<CR>
+au FileType go nmap <leader>a :call GolangAlternate()<CR>
 
 filetype plugin indent on
 
@@ -304,18 +321,3 @@ color solarized
 " scope :foos, where(foo: true)
 " scope :foos, -> { where(foo: bar) }
 map <Leader>l ^f,a -> {A }
-
-" Alternate file in Go, similar to :A in rails.vim
-function! GolangAlternate()
-  let filename = expand('%')
-
-  if match(filename, '_test') != -1
-    let alternate = substitute(filename,  '_test.go$', '.go', 'g')
-  else
-    let alternate = substitute(filename,  '.go$', '_test.go', 'g')
-  endif
-
-  execute "edit" alternate
-endfunction
-
-map <Leader>gla :call GolangAlternate()<CR>
