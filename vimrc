@@ -155,9 +155,6 @@ Plugin 'ervandew/supertab'
 " Syntax checking
 Plugin 'scrooloose/syntastic'
 
-" File tree
-Plugin 'scrooloose/nerdtree'
-
 " Gist
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
