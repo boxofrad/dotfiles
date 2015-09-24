@@ -85,6 +85,9 @@ augroup vimrcEx
 
   " disable tab highlighting
   autocmd BufNewFile,BufRead *.go set nolist
+
+  " use 4 spaces for Objective-C
+  autocmd FileType objc setlocal tabstop=4 shiftwidth=4
 augroup END
 
 " Use Ag over Grep
@@ -198,6 +201,9 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mmalecki/vim-node.js'
 Plugin 'skwp/vim-rspec'
 Plugin 'cakebaker/scss-syntax.vim'
+
+" Objective-C
+Plugin 'b4winckler/vim-objc'
 
 " Go
 Plugin 'fatih/vim-go'
