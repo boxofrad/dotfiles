@@ -1,0 +1,61 @@
+#!/bin/bash
+
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+symlink() {
+  src=$DOTFILES_DIR/$1
+  dst=$HOME/$1
+
+  if [[ -e "$dst" ]]; then
+    echo "EXISTS: $dst"
+  else
+    echo "SYMLINK: $src → $dst"
+    ln -sf "$src" "$dst"
+  fi
+}
+
+# Git
+symlink .gitconfig
+symlink .git_template
+symlink .gitignore_global
+
+# Tmux
+symlink .tmux.conf
+
+# Ruby
+symlink .irbrc
+
+# ZSH
+symlink .zshrc
+
+# Binaries
+symlink bin
+
+# Vim
+symlink .vimrc
+symlink .gvimrc
+symlink .vim
+vim +PluginInstall +qall
+
+if [[ `uname` -eq "Darwin" ]]; then
+  # OSX Hot Corners
+  # Possible values:
+  #  0: no-op
+  #  2: Mission Control (all windows)
+  #  3: Show application windows
+  #  4: Desktop
+  #  5: Start screen saver
+  #  6: Disable screen saver
+  #  7: Dashboard
+  # 10: Put display to sleep
+  # 11: Launchpad
+  # 12: Notification Center
+
+  # Bottom Left → Mission Control
+  defaults write com.apple.dock wvous-bl-corner -int 2
+  defaults write com.apple.dock wvous-bl-modifier -int 0
+
+  # Bottom Right → Desktop
+  defaults write com.apple.dock wvous-br-corner -int 4
+  defaults write com.apple.dock wvous-br-modifier -int 0
+fi
