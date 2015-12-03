@@ -14,11 +14,6 @@ symlink() {
   fi
 }
 
-# Vim
-symlink .vimrc
-symlink .gvimrc
-symlink .vim
-
 # Git
 symlink .gitconfig
 symlink .git_template
@@ -35,3 +30,9 @@ symlink .zshrc
 
 # Binaries
 symlink bin
+
+# Vim
+symlink .vimrc
+symlink .gvimrc
+symlink .vim
+vim +PluginInstall +qall
