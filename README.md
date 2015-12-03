@@ -14,7 +14,7 @@ These are my dotfiles. There are many like them, but these ones are mine.
 8. Time to make an SSH key: `ssh-keygen -t rsa -b 4096 -C "daniel+<machine-name>@floppy.co"`
 9. Copy it to your clipboard: `pbcopy < ~/.ssh/id_rsa.pub`
 10. Add it [to GitHub](https://github.com/settings/ssh).
-11. Run the install script: `bin/install`
+11. Run the install script: `script/install`
 12. Log into the Heroku Toolbelt: `heroku login`
 13. Remap caps lock to control (System Preferences → Keyboard → Modifier Keys).
 14. Beat yourself up for not making this an Ansible playbook.
