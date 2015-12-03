@@ -1,8 +1,8 @@
 # Oh my ZSH! <3
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="zhann"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
+# ZSH=$HOME/.oh-my-zsh
+# ZSH_THEME="zhann"
+# plugins=(git)
+# source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/.bin
 export TERM=screen-256color
@@ -67,27 +67,6 @@ alias rlc="spring rails console"
 alias mig="spring rake db:migrate"
 alias cpd="bundle exec cap production deploy:migrations"
 alias csd="bundle exec cap staging deploy:migrations"
-
-rb() {
-  step=$1
-
-  if [ -z "$step" ]; then
-    step=1
-  fi
-
-  spring rake db:rollback STEP=$step
-  spring rake db:rollback STEP=$step RAILS_ENV=test
-}
-
-# start a rails server on the first available port
-server() {
-  port=3000
-  while lsof -i :$port >> /dev/null
-  do
-    port=$[$port +1]
-  done
-  bundle exec rails server -p $port
-}
 
 # node.js
 export PATH="./node_modules/.bin:$PATH"
