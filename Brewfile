@@ -6,6 +6,7 @@ brew 'git'
 brew 'go'
 brew 'postgresql'
 brew 'heroku-toolbelt'
+brew 'the_silver_searcher'
 
 tap 'caskroom/cask'
 brew 'brew-cask'
