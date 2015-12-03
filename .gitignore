@@ -1,5 +1,6 @@
 .DS_Store
-vim/.netrwhist
-vim/vim
+.vim/.netrwhist
+.vim/bundle/*
+!vim/bundle/Vundle.vim
 mutt/temp
 mutt/mutt
