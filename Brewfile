@@ -1,0 +1,20 @@
+tap 'homebrew/services'
+
+brew 'macvim'
+brew 'tmux'
+brew 'git'
+brew 'go'
+brew 'postgresql'
+brew 'heroku-toolbelt'
+
+tap 'caskroom/cask'
+brew 'brew-cask'
+cask_args appdir: '/Applications'
+
+cask 'iterm2'
+cask 'google-chrome'
+cask 'spotify'
+cask '1password'
+cask 'dropbox'
+cask 'slack'
+cask 'dash'
