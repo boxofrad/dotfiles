@@ -15,10 +15,10 @@
     down = pull --rebase
     head = !git r -1
     h = !git head
-    hp = "!. ~/.bin/githelpers && show_git_head"
+    hp = "!. ~/bin/githelpers && show_git_head"
     r = !GIT_NO_PAGER=1 git l -30
     ra = !git r --all
-    l = "!. ~/.bin/githelpers && pretty_git_log"
+    l = "!. ~/bin/githelpers && pretty_git_log"
     la = !git l --all
 
 [merge]
