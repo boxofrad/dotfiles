@@ -96,16 +96,4 @@ export PATH="./node_modules/.bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-rawr() {
-  rails new $1 -T --skip-bundle -d mysql -m http://dev.rawnet.com/files/rails-application-template.rb
-}
-
-password-hash() {
-  openssl passwd -1 $1
-}
-
-install-project-ruby() {
-  rbenv install `cat .ruby-version` && gem update --system && gem install bundler
-}
-
 alias kill-it-with-fire="git reset --hard HEAD && git-remove-untracked"
