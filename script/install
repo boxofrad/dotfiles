@@ -28,6 +28,10 @@ symlink .irbrc
 # ZSH
 symlink .zshrc
 
+if [[ `which zsh` != "$SHELL" ]]; then
+  chsh -s `which zsh`
+fi
+
 # Binaries
 symlink bin
 
@@ -58,4 +62,9 @@ if [[ `uname` -eq "Darwin" ]]; then
   # Bottom Right → Desktop
   defaults write com.apple.dock wvous-br-corner -int 4
   defaults write com.apple.dock wvous-br-modifier -int 0
+
+  # Cocoapods
+  if ! [ -x "$(command -v pod)" ]; then
+    sudo gem install cocoapods --no-ri --no-rdoc
+  fi
 fi
