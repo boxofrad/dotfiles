@@ -104,10 +104,6 @@ password-hash() {
   openssl passwd -1 $1
 }
 
-git-remove-untracked() {
-  git status --porcelain | grep '^??' | awk '{print $2}' | xargs rm
-}
-
 install-project-ruby() {
   rbenv install `cat .ruby-version` && gem update --system && gem install bundler
 }
