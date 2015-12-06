@@ -24,7 +24,9 @@ alias vi="vim"
 alias b="bundle exec"
 alias brake="bundle exec rake"
 alias ta="tmux attach -t"
+
 alias gl="git l"
+alias gp="git push"
 alias gst="git status"
 
 # C-x C-e to edit the current command line
