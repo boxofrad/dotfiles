@@ -1,0 +1,46 @@
+# boxofrad prompt theme
+
+prompt_boxofrad_setup() {
+  PROMPT="λ "
+  RPROMPT="%1~% \$(prompt_boxofrad_scm_branch)"
+}
+
+prompt_boxofrad_scm_branch() {
+  git rev-parse --git-dir &>/dev/null
+
+  if [ $? -ne 0 ]; then
+    # Not a git repository bail out
+    return
+  fi
+
+  local scm_text
+  git symbolic-ref HEAD &>/dev/null
+
+  if [ $? -eq 0 ]; then
+    # Show the branch name
+    scm_text="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+  else
+    # HEAD is detached, show the SHA
+    scm_text="$(git rev-parse --short HEAD 2>/dev/null)"
+  fi
+
+  git status 2>/dev/null | grep rebase &>/dev/null
+  if [ $? -eq 0 ]; then
+    # Rebase in progress
+    scm_text="$scm_text (rebasing)"
+  fi
+
+  if [ -n "$(git status --porcelain)" ]; then
+    # Dirty tree, brown prompt
+    scm_text="%F{094}$scm_text%f"
+  else
+    # Clean tree, blue prompt
+    scm_text="%F{075}$scm_text%f"
+  fi
+
+  echo " @ $scm_text"
+}
+
+prompt_boxofrad_setup "$@"
+
+# vim:set ft=zsh:

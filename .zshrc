@@ -1,45 +1,50 @@
-# Oh my ZSH! <3
-# ZSH=$HOME/.oh-my-zsh
-# ZSH_THEME="zhann"
-# plugins=(git)
-# source $ZSH/oh-my-zsh.sh
-
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/.bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/bin
 export TERM=screen-256color
 
-if [ -n "$(command -v rbenv)" ]; then
-  eval "$(rbenv init -)"
-fi
+# Node.js (ugh)
+export PATH="./node_modules/.bin:$PATH"
 
-if [ -n "$(command -v mvim)" ]; then
-  alias vi="mvim -v"
-  alias vim="mvim -v"
-  alias m="mvim"
-  export EDITOR="mvim -v"
-else
-  export EDITOR="vim"
-fi
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
-export EDITOR="mvim -v"
-
-# http://robots.thoughtbot.com/post/27985816073/the-hitchhikers-guide-to-riding-a-mountain-lion
-export CPPFLAGS=-I/opt/X11/include
-
-# Android SDK
+# Android
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
-# Aliases
+# Editor
+if [ -n "$(command -v mvim)" ]; then
+  export EDITOR="mvim -v"
+  alias vim="mvim -v"
+else
+  export EDITOR=vim
+fi
+alias vi="vim"
+
+# Shortcuts
 alias b="bundle exec"
 alias brake="bundle exec rake"
 alias ta="tmux attach -t"
 alias gl="git l"
 alias gst="git status"
 
-# node.js
-export PATH="./node_modules/.bin:$PATH"
+# C-x C-e to edit the current command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
 
-# Let's a go!
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+# C-r and C-f to search history
+bindkey '\C-r' history-incremental-search-backward
+bindkey '\C-f' history-incremental-search-forward
 
-alias kill-it-with-fire="git reset --hard HEAD && git-remove-untracked"
+# Start typing then hit <Up> for context aware history
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+# Prompt
+setopt PROMPT_SUBST
+fpath=(~/.zsh $fpath)
+autoload -U promptinit
+promptinit
+autoload -U colors
+colors
+prompt boxofrad
