@@ -42,7 +42,7 @@ symlink .gvimrc
 symlink .vim
 vim +PluginInstall +qall
 
-if [[ `uname` -eq "Darwin" ]]; then
+if [[ `uname` == "Darwin" ]]; then
   # OSX Hot Corners
   # Possible values:
   #  0: no-op
