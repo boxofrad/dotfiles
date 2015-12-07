@@ -50,3 +50,7 @@ promptinit
 autoload -U colors
 colors
 prompt boxofrad
+
+if [ -e $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
