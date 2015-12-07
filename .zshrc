@@ -38,6 +38,12 @@ bindkey '\C-x\C-e' edit-command-line
 bindkey '\C-r' history-incremental-search-backward
 bindkey '\C-f' history-incremental-search-forward
 
+# C-a beginning of line
+bindkey '\C-a' beginning-of-line
+
+# C-e end of line
+bindkey '\C-e' end-of-line
+
 # Start typing then hit <Up> for context aware history
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
