@@ -11,6 +11,11 @@ export PATH=$PATH:$GOPATH/bin
 # Android
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+# Save a ton of history
+HISTSIZE=20000
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+
 # Editor
 if [ -n "$(command -v mvim)" ]; then
   export EDITOR="mvim -v"
