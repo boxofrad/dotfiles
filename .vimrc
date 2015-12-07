@@ -319,6 +319,7 @@ map <Leader>j :%!python -m json.tool<CR>
 " Open the current folder in finder
 map <Leader>o :!open %:h<CR>
 
+Plugin 'altercation/vim-colors-solarized'
 set background=dark
 let g:solarized_termtrans = 1
 color solarized
