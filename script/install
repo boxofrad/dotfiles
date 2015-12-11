@@ -39,6 +39,7 @@ symlink bin
 # Vim
 symlink .vimrc
 symlink .gvimrc
+symlink .xvimrc
 symlink .vim
 vim +PluginInstall +GoInstallBinaries +qall
 
