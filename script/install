@@ -40,7 +40,7 @@ symlink bin
 symlink .vimrc
 symlink .gvimrc
 symlink .vim
-vim +PluginInstall +qall
+vim +PluginInstall +GoInstallBinaries +qall
 
 if [[ `uname` == "Darwin" ]]; then
   # OSX Hot Corners
