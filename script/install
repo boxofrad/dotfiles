@@ -65,6 +65,9 @@ if [[ `uname` == "Darwin" ]]; then
   defaults write com.apple.dock wvous-br-corner -int 4
   defaults write com.apple.dock wvous-br-modifier -int 0
 
+  # Enable repeating keys (press and hold)
+  defaults write -g ApplePressAndHoldEnabled 0
+
   # Cocoapods
   if ! [ -x "$(command -v pod)" ]; then
     sudo gem install cocoapods --no-ri --no-rdoc
