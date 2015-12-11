@@ -17,4 +17,5 @@ These are my dotfiles. There are many like them, but these ones are mine.
 11. Run the install script: `script/install`
 12. Log into the Heroku Toolbelt: `heroku login`
 13. Remap caps lock to control (System Preferences → Keyboard → Modifier Keys).
-14. Beat yourself up for not making this an Ansible playbook.
+14. Install [XVim](http://xvim.org/)
+15. Beat yourself up for not making this an Ansible playbook.
