@@ -61,6 +61,10 @@ if [[ `uname` == "Darwin" ]]; then
   defaults write com.apple.dock wvous-bl-corner -int 2
   defaults write com.apple.dock wvous-bl-modifier -int 0
 
+  # Top Left → Mission Control
+  defaults write com.apple.dock wvous-tl-corner -int 2
+  defaults write com.apple.dock wvous-tl-modifier -int 0
+
   # Bottom Right → Desktop
   defaults write com.apple.dock wvous-br-corner -int 4
   defaults write com.apple.dock wvous-br-modifier -int 0
