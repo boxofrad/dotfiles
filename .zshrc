@@ -34,6 +34,10 @@ alias gl="git l"
 alias gp="git push"
 alias gst="git status"
 
+gpu() {
+  git push -u origin $(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+}
+
 # C-x C-e to edit the current command line
 autoload -U edit-command-line
 zle -N edit-command-line
