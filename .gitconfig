@@ -31,6 +31,8 @@
 [init]
   templatedir = ~/.git_template
 [push]
-	default = simple
+  default = simple
 [credential]
-	helper = cache
+  helper = cache
+[difftool "ksdiff"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
