@@ -7,6 +7,8 @@ brew 'go'
 brew 'postgresql'
 brew 'heroku-toolbelt'
 brew 'the_silver_searcher'
+brew 'chruby'
+brew 'ruby-install'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'

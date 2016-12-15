@@ -8,6 +8,10 @@ export PATH="./node_modules/.bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# Ruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
 # Android
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
