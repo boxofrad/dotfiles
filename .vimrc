@@ -148,7 +148,7 @@ Plugin 'ddollar/nerdcommenter'
 Plugin 'skalnik/vim-vroom'
 
 let g:vroom_use_dispatch = 1
-let g:vroom_use_bundle_exec = 0
+let g:vroom_use_bundle_exec = 1
 let g:vroom_cucumber_path = 'cucumber'
 
 " Use spring if it's available
