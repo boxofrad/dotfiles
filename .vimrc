@@ -71,6 +71,9 @@ augroup vimrcEx
   autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
   autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
 
+  " Enable spellchecking for git commit messages
+  autocmd FileType gitcommit setlocal spell
+
   " .md is markdown
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
