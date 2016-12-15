@@ -1,2 +1,4 @@
 #!/bin/bash
-git status --porcelain | grep '^??' | awk '{print $2}' | xargs rm -r
+for file in $(git status --porcelain | grep '^??' | awk '{print $2}'); do
+  rm -r "$file"
+done
