@@ -86,6 +86,9 @@ augroup vimrcEx
   " use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
+  " use tabs for terraform
+  autocmd BufNewFile,BufRead *.tf setlocal noet ts=4 sw=4 sts=4
+
   " disable tab highlighting
   autocmd BufNewFile,BufRead *.go set nolist
 
