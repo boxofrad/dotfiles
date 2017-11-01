@@ -133,10 +133,14 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 
 " Quick file switching
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
+
+set rtp+=/usr/local/opt/fzf
+Plugin 'junegunn/fzf.vim'
+noremap <C-P> :Files<CR>
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Searching with the silver searcher
 Plugin 'rking/ag.vim'

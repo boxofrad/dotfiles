@@ -9,6 +9,7 @@ brew 'heroku-toolbelt'
 brew 'the_silver_searcher'
 brew 'chruby'
 brew 'ruby-install'
+brew 'fzf'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
