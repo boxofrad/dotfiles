@@ -226,7 +226,7 @@ let g:go_highlight_structs = 1
 " Please just let me live my life syntastic
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
-      \ 'passive_filetypes': ['go'] }
+      \ 'passive_filetypes': ['go', 'scss'] }
 
 " Alternate file similar to :A in rails.vim
 function! GolangAlternate()
