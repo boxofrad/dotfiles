@@ -212,6 +212,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mmalecki/vim-node.js'
 Plugin 'skwp/vim-rspec'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'posva/vim-vue'
 
 " Objective-C
 Plugin 'b4winckler/vim-objc'
