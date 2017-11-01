@@ -9,8 +9,21 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Ruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+CHRUBY_SCRIPTS=(
+  # Homebrew
+  /usr/local/opt/chruby/share/chruby/chruby.sh
+  /usr/local/opt/chruby/share/chruby/auto.sh
+
+  # Linux / From Source
+  /usr/local/share/chruby/chruby.sh
+  /usr/local/share/chruby/auto.sh
+)
+
+for script in $CHRUBY_SCRIPTS; do
+  if [ -f $script ]; then
+    source $script
+  fi
+done
 
 # Android
 export ANDROID_HOME=/usr/local/opt/android-sdk
