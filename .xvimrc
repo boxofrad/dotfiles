@@ -1,2 +1,5 @@
 set number
 set relativenumber
+set incsearch
+set ignorecase
+set smartcase
