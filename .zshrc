@@ -8,6 +8,11 @@ export PATH="./node_modules/.bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# Load profile.d on work VM
+for file in /etc/profile.d/*; do
+  source $file
+done
+
 # Ruby
 CHRUBY_SCRIPTS=(
   # Homebrew
