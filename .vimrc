@@ -228,22 +228,6 @@ let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'passive_filetypes': ['go', 'scss'] }
 
-" Alternate file similar to :A in rails.vim
-function! GolangAlternate()
-  let filename = expand('%')
-
-  if match(filename, '_test') != -1
-    let alternate = substitute(filename,  '_test.go$', '.go', 'g')
-  else
-    let alternate = substitute(filename,  '.go$', '_test.go', 'g')
-  endif
-
-  execute "edit" alternate
-endfunction
-
-au FileType go nmap <leader>t :Dispatch go test ./...<CR>
-au FileType go nmap <leader>a :call GolangAlternate()<CR>
-
 filetype plugin indent on
 
 """""""""""""""""""""""
