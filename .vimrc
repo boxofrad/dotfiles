@@ -138,7 +138,7 @@ Plugin 'tpope/vim-rails'
 " Quick file switching
 " Plugin 'kien/ctrlp.vim'
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 Plugin 'junegunn/fzf.vim'
 noremap <C-P> :Files<CR>
 
