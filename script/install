@@ -43,6 +43,11 @@ symlink .xvimrc
 symlink .vim
 vim +PluginInstall +GoInstallBinaries +qall
 
+if [ ! -d $HOME/.fzf ]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  $HOME/.fzf/install --no-bash --no-zsh --no-fish
+fi
+
 if [[ `uname` == "Darwin" ]]; then
   # OSX Hot Corners
   # Possible values:
