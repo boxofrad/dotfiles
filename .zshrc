@@ -9,9 +9,11 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Load profile.d on work VM
-for file in /etc/profile.d/*; do
-  source $file
-done
+if [ -d /etc/profile.d ]; then
+  for file in /etc/profile.d/*; do
+    source $file
+  done
+fi
 
 # Ruby
 CHRUBY_SCRIPTS=(
