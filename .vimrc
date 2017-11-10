@@ -219,6 +219,9 @@ let g:go_fmt_command = "goimports"
 let g:go_dispatch_enabled = 1
 let g:go_highlight_structs = 1
 
+map <Leader>t :GoTest<CR>
+map <Leader>a :GoAlternate<CR>
+
 " Please just let me live my life syntastic
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
@@ -298,9 +301,6 @@ nnoremap <Left> :echoe "Use h. you muppet"<CR>
 nnoremap <Right> :echoe "Use l. you muppet"<CR>
 nnoremap <Up> :echoe "Use k. you muppet"<CR>
 nnoremap <Down> :echoe "Use j. you muppet"<CR>
-
-" Tabularize the hashrocket
-map <Leader>t :Tabularize/=><CR>
 
 " Line assignments up
 map <Leader>= :Tabularize/=<CR>
