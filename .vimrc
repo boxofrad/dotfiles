@@ -220,6 +220,7 @@ let g:go_dispatch_enabled = 1
 let g:go_highlight_structs = 1
 
 map <Leader>t :GoTest<CR>
+map <Leader>cv :GoCoverage<CR>
 map <Leader>a :GoAlternate<CR>
 
 " Please just let me live my life syntastic
