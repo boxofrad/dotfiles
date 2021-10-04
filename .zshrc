@@ -5,8 +5,9 @@ export TERM=screen-256color
 export PATH="./node_modules/.bin:$PATH"
 
 # Go
-export GOPATH=$HOME/go
+export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
+export GOPRIVATE=github.com/hashicorp
 
 # Load profile.d on work VM
 if [ -d /etc/profile.d ]; then
