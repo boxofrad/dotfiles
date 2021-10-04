@@ -159,7 +159,14 @@ lua <<EOF
     },
     sources = {
       { name = 'nvim_lsp' },
-      { name = 'buffer' },
+      {
+        name = 'buffer',
+        opts = {
+          get_bufnrs = function()
+            return vim.api.nvim_list_bufs()
+          end
+        }
+      },
       { name = 'path' },
     }
   })
