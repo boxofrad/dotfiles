@@ -22,10 +22,10 @@
     la = !git l --all
 
 [merge]
-    tool = vimdiff
+  tool = vimdiff
 
 [github]
-    user = boxofrad
+  user = boxofrad
 [core]
   excludesfile = ~/.gitignore_global
 [init]
@@ -34,5 +34,9 @@
   default = simple
 [credential]
   helper = cache
-[difftool "ksdiff"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[submodule]
+  recurse = true
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+[pull]
+  rebase = true
