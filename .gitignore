@@ -4,3 +4,5 @@
 !vim/bundle/Vundle.vim
 mutt/temp
 mutt/mutt
+bin/
+!bin/git*
