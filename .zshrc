@@ -1,40 +1,31 @@
+ulimit -n 200000
+ulimit -u 2048
+
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:$HOME/bin
 export TERM=screen-256color
 
 # Node.js (ugh)
 export PATH="./node_modules/.bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Go
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 export GOPRIVATE=github.com/hashicorp
 
-# Load profile.d on work VM
-if [ -d /etc/profile.d ]; then
-  for file in /etc/profile.d/*; do
-    source $file
-  done
-fi
+# Handy function for grabbing a module pseudo-version.
+go-mod-version() {
+  date_version=$(
+    TZ=UTC git --no-pager show \
+    --quiet \
+    --abbrev=12 \
+    --date='format-local:%Y%m%d%H%M%S' \
+    --format="%cd-%h"
+  )
 
-# Ruby
-CHRUBY_SCRIPTS=(
-  # Homebrew
-  /usr/local/opt/chruby/share/chruby/chruby.sh
-  /usr/local/opt/chruby/share/chruby/auto.sh
-
-  # Linux / From Source
-  /usr/local/share/chruby/chruby.sh
-  /usr/local/share/chruby/auto.sh
-)
-
-for script in $CHRUBY_SCRIPTS; do
-  if [ -f $script ]; then
-    source $script
-  fi
-done
-
-# Android
-export ANDROID_HOME=/usr/local/opt/android-sdk
+  echo "v0.0.0-$date_version"
+}
 
 # Save a ton of history
 HISTSIZE=20000
@@ -42,19 +33,19 @@ HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
 # Editor
-if [ -n "$(command -v mvim)" ]; then
-  export EDITOR="mvim -v"
-  alias vim="mvim -v"
+if [ -n "$(command -v nvim)" ]; then
+  alias ogvim=/usr/local/bin/vim
+  export EDITOR="nvim"
+  alias vim="nvim"
+  alias vi="nvim"
 else
   export EDITOR=vim
 fi
-alias vi="vim"
 
-# Shortcuts
-alias b="bundle exec"
-alias brake="bundle exec rake"
+# Tmux
 alias ta="tmux attach -t"
 
+# Git
 alias gl="git l"
 alias gp="git push"
 alias gst="git status"
@@ -91,6 +82,7 @@ autoload -U colors
 colors
 prompt boxofrad
 
+# Local customizations
 if [ -e $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
