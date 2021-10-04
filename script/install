@@ -39,7 +39,6 @@ symlink bin
 # Vim
 symlink .vimrc
 symlink .gvimrc
-symlink .xvimrc
 symlink .vim
 vim +PluginInstall +GoInstallBinaries +qall
 
@@ -76,9 +75,4 @@ if [[ `uname` == "Darwin" ]]; then
 
   # Enable repeating keys (press and hold)
   defaults write -g ApplePressAndHoldEnabled 0
-
-  # Cocoapods
-  if ! [ -x "$(command -v pod)" ]; then
-    sudo gem install cocoapods --no-ri --no-rdoc
-  fi
 fi
