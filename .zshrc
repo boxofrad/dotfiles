@@ -15,7 +15,7 @@ export PATH=$PATH:$GOPATH/bin
 export GOPRIVATE=github.com/hashicorp
 
 # Handy function for grabbing a module pseudo-version.
-go-mod-version() {
+go-mod-pseudo-version() {
   date_version=$(
     TZ=UTC git --no-pager show \
     --quiet \
