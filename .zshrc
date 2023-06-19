@@ -87,3 +87,7 @@ prompt boxofrad
 if [ -e $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
+
+container-ip() {
+  docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
+}
