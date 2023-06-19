@@ -49,6 +49,7 @@ alias ta="tmux attach -t"
 alias gl="git l"
 alias gp="git push"
 alias gst="git status"
+alias prs="gh pr list -A boxofrad"
 
 gpu() {
   git push -u origin $(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
