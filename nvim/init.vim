@@ -145,6 +145,10 @@ set list listchars=tab:»·,trail:·
 map § <Esc>
 imap § <Esc>
 
+" Quickly moving between next/prev results (e.g. in :grep)
+map ]q :cnext<CR>
+map [q :cprev<CR>
+
 " Completion
 set completeopt=menu,menuone,noselect
 
