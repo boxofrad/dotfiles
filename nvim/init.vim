@@ -48,6 +48,9 @@ Plug 'mattn/webapi-vim'
 " Change surroundings
 Plug 'tpope/vim-surround'
 
+" Search with ripgrep
+Plug 'jremmen/vim-ripgrep'
+
 call plug#end()
 
 " Leader key
