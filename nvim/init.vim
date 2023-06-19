@@ -220,9 +220,23 @@ nvim_lsp.gopls.setup {
   -- }
 }
 
+nvim_lsp.rust_analyzer.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = 'clippy'
+      },
+    },
+  },
+}
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'terraformls' }
+local servers = { 'terraformls', 'clangd' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -251,7 +265,7 @@ EOF
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- TODO: Protobufs
-  ensure_installed = { 'go', 'gomod', 'hcl', 'javascript', 'ruby', 'query' },
+  ensure_installed = { 'go', 'gomod', 'hcl', 'javascript', 'ruby', 'query', 'rust' },
   highlight = {
     enable = true
   },
@@ -259,14 +273,14 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 lua <<EOF
-function goimports(timeout_ms)
+function autoformat(timeout_ms)
   local params = vim.lsp.util.make_range_params()
   params.context = {only = {"source.organizeImports"}}
   local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeout_ms)
   for _, res in pairs(result or {}) do
     for _, r in pairs(res.result or {}) do
       if r.edit then
-        vim.lsp.util.apply_workspace_edit(r.edit)
+        vim.lsp.util.apply_workspace_edit(r.edit, "utf-8")
       else
         vim.lsp.buf.execute_command(r.command)
       end
@@ -277,5 +291,9 @@ function goimports(timeout_ms)
 end
 EOF
 
-" Run goimports (via LSP) on save.
-autocmd BufWritePre *.go lua goimports(1000)
+" Organize imports and format code (via LSP) on save.
+autocmd BufWritePre *.go lua autoformat(1000)
+autocmd BufWritePre *.rs lua autoformat(1000)
+
+" Accept project-local configuration
+set exrc
