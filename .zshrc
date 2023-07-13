@@ -1,7 +1,12 @@
+local brew="/opt/homebrew/bin/brew"
+if [ -f "$brew" ]; then
+  eval "$($brew shellenv)"
+fi
+
 ulimit -n 200000
 ulimit -u 2048
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin
+export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin"
 export TERM=screen-256color
 
 # Node.js (ugh)
