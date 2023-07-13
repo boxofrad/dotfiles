@@ -14,6 +14,8 @@ symlink() {
   fi
 }
 
+mkdir -p $HOME/.config/{nvim,alacritty}
+
 # Git
 symlink .gitconfig
 symlink .git_template
@@ -39,6 +41,9 @@ symlink bin
 # Vim
 ln -sf $DOTFILES_DIR/nvim/init.vim $HOME/.config/nvim/init.vim
 nvim +PlugInstall +qall
+
+# Alacritty
+ln -sf $DOTFILES_DIR/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
 if [[ `uname` == "Darwin" ]]; then
   # OSX Hot Corners
