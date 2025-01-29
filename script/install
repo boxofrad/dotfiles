@@ -24,9 +24,6 @@ symlink .gitignore_global
 # Tmux
 symlink .tmux.conf
 
-# Ruby
-symlink .irbrc
-
 # ZSH
 symlink .zshrc
 symlink .zsh
@@ -42,10 +39,14 @@ symlink bin
 ln -sf $DOTFILES_DIR/nvim/init.vim $HOME/.config/nvim/init.vim
 nvim +PlugInstall +qall
 
-# Alacritty
-ln -sf $DOTFILES_DIR/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+# Zed
+ln -sf $DOTFILES_DIR/zed/settings.json $HOME/.config/zed/settings.json
+ln -sf $DOTFILES_DIR/zed/keymap.json $HOME/.config/zed/keymap.json
 
 if [[ `uname` == "Darwin" ]]; then
+  # Ghostty
+  ln -sf $DOTFILES_DIR/ghostty/config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
+
   # OSX Hot Corners
   # Possible values:
   #  0: no-op
