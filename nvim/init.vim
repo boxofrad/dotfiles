@@ -61,6 +61,21 @@ nnoremap <silent> <Leader>t :TestNearest<CR>
 nnoremap <silent> <Leader>T :TestFile<CR>
 nnoremap <silent> gt :TestVisit<CR>
 
+
+function! EncoreTransform(cmd) abort
+  " Find 'encore.app' in the root directory
+  let l:encore_app = findfile('encore.app', '.;')
+  " If the file exists, replace 'go' with 'encore', otherwise return the original command
+  if filereadable(l:encore_app)
+    return substitute(a:cmd, '^go', 'encore', '')
+  else
+    return a:cmd
+  endif
+endfunction
+
+let g:test#custom_transformations = {'encore': function('EncoreTransform')}
+let g:test#transformation = 'encore'
+
 " Alternate file similar to :A in rails.vim
 function! GolangAlternate()
   let filename = expand('%')
