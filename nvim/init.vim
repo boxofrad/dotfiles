@@ -303,7 +303,7 @@ function autoformat(timeout_ms)
     end
   end
 
-  vim.lsp.buf.formatting_sync()
+  vim.lsp.buf.format()
 end
 EOF
 
