@@ -40,11 +40,11 @@ SAVEHIST=20000
 # Editor
 if [ -n "$(command -v nvim)" ]; then
   alias ogvim=/usr/local/bin/vim
-  export EDITOR="nvim"
+  export EDITOR="${EDITOR:-nvim}"
   alias vim="nvim"
   alias vi="nvim"
 else
-  export EDITOR=vim
+  export EDITOR="${EDITOR-vim}"
 fi
 
 # Tmux
