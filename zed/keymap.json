@@ -1,0 +1,64 @@
+[
+  {
+    "context": "(Editor && vim_mode == normal) || MarkdownPreview",
+    "bindings": {
+      "\\ t": "editor::SpawnNearestTask",
+      "; t": "editor::SpawnNearestTask",
+      "space r n": "editor::Rename",
+      "ctrl-j": [
+        "workspace::ActivatePaneInDirection",
+        "Down"
+      ],
+      "ctrl-k": [
+        "workspace::ActivatePaneInDirection",
+        "Up"
+      ],
+      "ctrl-l": [
+        "workspace::ActivatePaneInDirection",
+        "Right"
+      ],
+      "ctrl-h": [
+        "workspace::ActivatePaneInDirection",
+        "Left"
+      ],
+      "g r": "editor::FindAllReferences",
+      "] s": "search::SelectNextMatch",
+      "[ s": "search::SelectPrevMatch",
+      "ctrl-s x": "pane::CloseAllItems"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-j": [
+        "workspace::ActivatePaneInDirection",
+        "Down"
+      ],
+      "ctrl-k": [
+        "workspace::ActivatePaneInDirection",
+        "Up"
+      ],
+      "ctrl-l": [
+        "workspace::ActivatePaneInDirection",
+        "Right"
+      ],
+      "ctrl-h": [
+        "workspace::ActivatePaneInDirection",
+        "Left"
+      ],
+      "ctrl-s l": "terminal::Clear"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-p": "file_finder::Toggle",
+      "ctrl-t": "tab_switcher::Toggle",
+      "ctrl-s z": "workspace::ToggleZoom",
+      "ctrl-s d": "workspace::ToggleBottomDock",
+      "ctrl-s ;": "workspace::ToggleRightDock",
+      "ctrl-s h": "workspace::ToggleLeftDock"
+    }
+  }
+]
