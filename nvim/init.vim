@@ -65,7 +65,7 @@ nnoremap <silent> gt :TestVisit<CR>
 function! GolangAlternate()
   let filename = expand('%')
 
-  if match(filename, '_test') != -1
+  if match(filename, '_test.go') != -1
     let alternate = substitute(filename,  '_test.go$', '.go', 'g')
   else
     let alternate = substitute(filename,  '.go$', '_test.go', 'g')
