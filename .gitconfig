@@ -1,40 +1,35 @@
 [user]
-  email = daniel@floppy.co
-  name = Daniel Upton
+    email = daniel@floppy.co
+    name = Daniel Upton
 
 [diff]
 [color]
     ui = auto
 
 [alias]
-    st = status
-    ci = commit
     co = checkout
-    di = diff
     cp = cherry-pick
-    down = pull --rebase
-    head = !git r -1
-    h = !git head
-    hp = "!. ~/bin/githelpers && show_git_head"
-    r = !GIT_NO_PAGER=1 git l -30
-    ra = !git r --all
-    l = "!. ~/bin/githelpers && pretty_git_log"
-    la = !git l --all
 
 [merge]
-  tool = vimdiff
+    tool = vimdiff
 
 [github]
-  user = boxofrad
+    user = boxofrad
+
 [core]
-  excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
+
 [push]
-  default = simple
+    default = simple
+
 [credential]
-  helper = cache
+    helper = cache
+
 [submodule]
-  recurse = true
+    recurse = true
+
 [url "git@github.com:"]
-  insteadOf = https://github.com/
+    insteadOf = https://github.com/
+
 [pull]
-  rebase = true
+    rebase = true
