@@ -42,6 +42,7 @@ nvim +PlugInstall +qall
 # Zed
 ln -sf $DOTFILES_DIR/zed/settings.json $HOME/.config/zed/settings.json
 ln -sf $DOTFILES_DIR/zed/keymap.json $HOME/.config/zed/keymap.json
+ln -sf $DOTFILES_DIR/zed/tasks.json $HOME/.config/zed/tasks.json
 
 if [[ `uname` == "Darwin" ]]; then
   # Ghostty
