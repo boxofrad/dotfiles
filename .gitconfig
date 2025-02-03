@@ -33,3 +33,15 @@
 
 [pull]
     rebase = true
+
+[user]
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGN04tr2F5teme6HZ0cPyIHKmrrt/N9h5H2L6kRG1jr/
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
